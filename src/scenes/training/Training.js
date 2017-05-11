@@ -6,13 +6,13 @@ import {
   Dimensions,
 } from 'react-native';
 import Swiper from 'react-native-swiper';
-import Header from './Header';
+import Header from '../../components/header';
 import Slide from './Slide';
 
 import alphabet from './alphabet';
 
 const HEADER_HEIGHT = 60;
-const { height } = Dimensions.get('window')
+const { height } = Dimensions.get('window');
 const SWIPER_HEIGHT = height - HEADER_HEIGHT;
 
 const styles = StyleSheet.create({
@@ -38,12 +38,16 @@ const styles = StyleSheet.create({
 });
 
 class Training extends React.Component {
+  openDrawer() {
+    this.props.navigation.navigate('DrawerOpen');
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <StatusBar animated />
         <View style={styles.header}>
-          <Header title="training" />
+          <Header title="training" onMenu={() => { this.openDrawer(); }} />
         </View>
         <Swiper style={styles.swiper} showsPagination={false} height={SWIPER_HEIGHT}>
           {alphabet.map(item => <Slide key={item.letter} item={item} />)}
@@ -52,5 +56,10 @@ class Training extends React.Component {
     );
   }
 }
+
+Training.propTypes = {
+  navigation: React.PropTypes.object.isRequired,
+};
+
 
 export default Training;
