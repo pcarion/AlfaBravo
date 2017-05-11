@@ -9,11 +9,11 @@ export default [{
 }, {
   letter: 'C',
   code: 'Charlie',
-  pronuncication: 'BRAH VOH',
+  pronuncication: 'CHAR LEE',
 }, {
   letter: 'D',
   code: 'Delta',
-  pronuncication: 'CHAR LEE',
+  pronuncication: 'DELL TAH',
 }, {
   letter: 'E',
   code: 'Echo',
@@ -57,7 +57,7 @@ export default [{
 }, {
   letter: 'O',
   code: 'Oscar',
-  pronuncication: 'OSS CAH',
+  pronuncication: 'OSS CUR',
 }, {
   letter: 'P',
   code: 'Papa',
