@@ -4,6 +4,10 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
+import Swiper from 'react-native-swiper';
+import Slide from './Slide';
+
+import alphabet from './alphabet';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,21 +16,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  text: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
 });
 
 class Training extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>
-          Training Page
-        </Text>
-      </View>
+      <Swiper showsPagination={false}>
+        {alphabet.map(item => <Slide key={item.letter} item={item} />)}
+      </Swiper>
     );
   }
 }
