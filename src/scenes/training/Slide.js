@@ -3,10 +3,8 @@ import {
   View,
   Text,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
-import Swiper from 'react-native-swiper';
-
-import alphabet from './alphabet';
 
 const styles = StyleSheet.create({
   slide: {
@@ -23,14 +21,33 @@ const styles = StyleSheet.create({
 });
 
 class Slide extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showResponse: false,
+    };
+    this.onPress = this.onPress.bind(this);
+  }
+
+  onPress() {
+    this.setState({
+      showResponse: true,
+    });
+  }
+
   render() {
     const { item } = this.props;
     return (
-      <View key={item.letter} style={styles.slide}>
+      <TouchableOpacity key={item.letter} style={styles.slide} onPress={this.onPress}>
         <Text style={styles.text}>{item.letter}</Text>
-        <Text style={styles.text}>{item.code}</Text>
-        <Text style={styles.text}>{item.pronuncication}</Text>
-      </View>
+        { this.state.showResponse && (
+          <View>
+            <Text style={styles.text}>{item.code}</Text>
+            <Text style={styles.text}>{item.pronuncication}</Text>
+          </View>
+          )
+        }
+      </TouchableOpacity>
     );
   }
 }

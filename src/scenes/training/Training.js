@@ -47,7 +47,7 @@ class Training extends React.Component {
       <View style={styles.container}>
         <StatusBar animated />
         <View style={styles.header}>
-          <Header title="training" onMenu={() => { this.openDrawer(); }} />
+          <Header title="Training" onMenu={() => { this.openDrawer(); }} />
         </View>
         <Swiper style={styles.swiper} showsPagination={false} height={SWIPER_HEIGHT}>
           {alphabet.map(item => <Slide key={item.letter} item={item} />)}
