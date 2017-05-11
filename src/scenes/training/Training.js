@@ -15,6 +15,21 @@ const HEADER_HEIGHT = 60;
 const { height } = Dimensions.get('window');
 const SWIPER_HEIGHT = height - HEADER_HEIGHT;
 
+/**
+ * Shuffles array in place. ES6 version
+ * @param {Array} a items The array containing the items.
+ * From:
+ * http://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+ */
+function shuffle(a) {
+  const result = [...a];
+  for (let i = result.length; i; i -= 1) {
+    const j = Math.floor(Math.random() * i);
+    [result[i - 1], result[j]] = [result[j], result[i - 1]];
+  }
+  return result;
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -50,7 +65,7 @@ class Training extends React.Component {
           <Header title="Training" onMenu={() => { this.openDrawer(); }} />
         </View>
         <Swiper style={styles.swiper} showsPagination={false} height={SWIPER_HEIGHT}>
-          {alphabet.map(item => <Slide key={item.letter} item={item} />)}
+          {shuffle(alphabet).map(item => <Slide key={item.letter} item={item} />)}
         </Swiper>
       </View>
     );
