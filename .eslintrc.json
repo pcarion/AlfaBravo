@@ -5,5 +5,36 @@
     "react",
     "jsx-a11y",
     "import"
-  ]
+  ],
+  "ecmaFeatures": {
+    "classes": true,
+    "modules": true,
+    "jsx": true,
+    "experimentalObjectRestSpread": true
+  },
+  "rules": {
+    "react/prefer-stateless-function" : 0,
+    "react/jsx-filename-extension" : 0,
+    "global-require" : 0,
+    "no-unused-vars": [2, {
+      "vars": "all",
+      "args": "after-used",
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_"
+    }],
+    "max-len": [2, {
+      "code": 132,
+      "tabWidth": 4,
+      "ignoreUrls": true
+    }],
+    "react/no-multi-comp" : 0,
+    "no-underscore-dangle" : 0,
+    "react/sort-comp" : 0,
+    "import/prefer-default-export" :0,
+    "arrow-body-style" : 0,
+    "react/forbid-prop-types" : 0,
+    "react/require-default-props" : 0,
+    "class-methods-use-this" : 0,
+    "no-console": 0 // at least for now
+  }
 }
