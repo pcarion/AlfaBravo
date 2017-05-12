@@ -9,7 +9,7 @@ import Swiper from 'react-native-swiper';
 import Header from '../../components/header';
 import Slide from './Slide';
 
-import alphabet from './alphabet';
+import alphabet from '../../data/alphabet';
 
 const HEADER_HEIGHT = 60;
 const { height } = Dimensions.get('window');
